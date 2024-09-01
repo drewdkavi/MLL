@@ -50,7 +50,6 @@ class Classifier(Model):
 
     def test(self, x_test: npt.NDArray[npt.NDArray[float]], y_true: npt.NDArray[any]):
 
-        print(f"Overridden testing... ")
         if len(x_test) != len(y_true):
             raise ValueError(f"Mismatched lengths - {len(x_test)} & {len(y_true)}! for x_test and y_true")
 

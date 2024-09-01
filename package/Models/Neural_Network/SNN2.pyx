@@ -8,15 +8,6 @@ cimport numpy as np
 # ----------------------------------------------------------------------------------------------------------------------
 # Activation functions
 
-cdef double sigmoid(double val):
-    # if val > 500:
-    #     val = 500.0
-    # if val < -500:
-    #     val = -500.0
-
-    return 1.0 / (1.0 + np.exp(-val))
-
-
 cdef double clipped_sigmoid(double val):
     if val > 500:
         val = 500.0
@@ -25,7 +16,7 @@ cdef double clipped_sigmoid(double val):
     return 1.0 / (1.0 + np.exp(-val))
 
 cdef double relu(double val):
-    return np.max((0, val))
+    return max(0.0, val)
 
 cdef double leaky_relu(double val):
     cdef double alpha = 0.05
@@ -53,7 +44,25 @@ cdef double mse(
     # We assume that w, x are of the same length, & use np vectorize operations here.
     return np.mean((w-x)**2)
 
-# TODO: Hinge Loss, ... many others i think - maybe backprop only applies to mse, maybe i dont need any of these?
+cdef np.ndarray[double, ndim=1] softmax(
+        np.ndarray[double, ndim=1] logits
+):
+    cdef np.ndarray[double, ndim=1] logits_max, exp_logits, probabilities
+
+    logits_max = np.max(logits, axis=0, keepdims=True)
+    exp_logits = np.exp(logits - logits_max)
+    probabilities = exp_logits / np.sum(exp_logits, axis=0, keepdims=True)
+    return probabilities
+
+# def cross_entropy_loss(predictions, labels):
+#     predictions = np.clip(predictions, 1e-15, 1.0 - 1e-15)
+#     loss = -np.sum(labels * np.log(predictions)) / predictions.shape[0]
+#     return loss
+#
+# def cross_entropy_gradient(predictions, labels):
+#     gradient = (predictions - labels) / predictions.shape[0]
+#     return gradient
+
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -81,17 +90,23 @@ cdef np.ndarray[double, ndim=1] _ff(
     cdef int j, layer_size
     cdef np.ndarray[double, ndim=2] layer
     cdef np.ndarray[double, ndim=1] current_vector = x_dp
-    cdef np.ndarray[double, ndim=1] vector
+    cdef np.ndarray[double, ndim=1] vector, logits
 
-    while i < L:
+    while i < L - 1:
         layer_size = len(layers[i])
         vector = np.zeros(layer_size)
         layer = layers[i]
         for j in range(layer_size):
-            vector[j] = sigmoid( dot(layer[j], current_vector) + biases[i][j] )
+            vector[j] = relu( dot(layer[j], current_vector) + biases[i][j] )
         current_vector = vector
         i += 1
-    return current_vector
+
+    layer_size = len(layers[L-1])
+    logits = np.zeros(layer_size)
+    for j in range(layer_size):
+        logits[j] = dot(layers[L-1][j], current_vector) + biases[i][j]
+
+    return softmax(logits)
 
 cpdef np.ndarray[double, ndim=1] feedforward(
         np.ndarray[double, ndim=1] x_dp,
@@ -102,67 +117,70 @@ cpdef np.ndarray[double, ndim=1] feedforward(
     return _ff(x_dp, layers, biases)
 
 
-cdef np.ndarray[double, ndim=1] _ff_clipped(
+# cdef np.ndarray[double, ndim=1] _ff_clipped(
+#         np.ndarray[double, ndim=1] x_dp,
+#         list layers,
+#         list biases
+#         # TODO: pass in activation function as an argument
+#
+# ):
+#     cdef int L = len(layers)
+#     cdef int i = 0
+#     cdef int j, layer_size
+#     cdef np.ndarray[double, ndim=2] layer
+#     cdef np.ndarray[double, ndim=1] current_vector = x_dp
+#     cdef np.ndarray[double, ndim=1] vector
+#
+#     while i < L:
+#         layer_size = len(layers[i])
+#         vector = np.zeros(layer_size)
+#         layer = layers[i]
+#         for j in range(layer_size):
+#             vector[j] = clipped_sigmoid( dot(layer[j], current_vector) + biases[i][j] )
+#         current_vector = vector
+#         i += 1
+#     return current_vector
+#
+# cpdef np.ndarray[double, ndim=1] feedforward_clipped(
+#         np.ndarray[double, ndim=1] x_dp,
+#         list layers,
+#         list biases
+#         # TODO: pass in activation function as an argument
+# ):
+#     return _ff_clipped(x_dp, layers, biases)
+
+cdef _ff_all(
         np.ndarray[double, ndim=1] x_dp,
         list layers,
         list biases
         # TODO: pass in activation function as an argument
-
 ):
     cdef int L = len(layers)
     cdef int i = 0
     cdef int j, layer_size
     cdef np.ndarray[double, ndim=2] layer
     cdef np.ndarray[double, ndim=1] current_vector = x_dp
-    cdef np.ndarray[double, ndim=1] vector
-
-    while i < L:
-        layer_size = len(layers[i])
-        vector = np.zeros(layer_size)
-        layer = layers[i]
-        for j in range(layer_size):
-            vector[j] = clipped_sigmoid( dot(layer[j], current_vector) + biases[i][j] )
-        current_vector = vector
-        i += 1
-    return current_vector
-
-cpdef np.ndarray[double, ndim=1] feedforward_clipped(
-        np.ndarray[double, ndim=1] x_dp,
-        list layers,
-        list biases
-        # TODO: pass in activation function as an argument
-):
-    return _ff_clipped(x_dp, layers, biases)
-
-
-
-
-cdef list _ff_all(
-        np.ndarray[double, ndim=1] x_dp,
-        list layers,
-        list biases
-        # TODO: pass in activation function as an argument
-):
-    cdef int L = len(layers)
-    cdef int i = 0
-    cdef int j, layer_size
-    cdef np.ndarray[double, ndim=2] layer
-    cdef np.ndarray[double, ndim=1] current_vector = x_dp
-    cdef np.ndarray[double, ndim=1] vector
+    cdef np.ndarray[double, ndim=1] vector, logits
     cdef list activations = []
 
-    while i < L:
+    while i < L-1:
         layer_size = len(layers[i])
         vector = np.zeros(layer_size)
         layer = layers[i]
         for j in range(layer_size):
-            vector[j] = sigmoid( dot(layer[j], current_vector) + biases[i][j] )
+            vector[j] = relu( dot(layer[j], current_vector) + biases[i][j] )
         current_vector = vector
         activations.append(current_vector)
         i += 1
-    return activations
 
-cpdef list feedforward_all(
+    layer_size = len(layers[L - 1])
+    logits = np.zeros(layer_size)
+    for j in range(layer_size):
+        logits[j] = dot(layers[L - 1][j], current_vector) + biases[i][j]
+
+    return activations, softmax(logits)
+
+cpdef feedforward_all(
         np.ndarray[double, ndim=1] x_dp,
         list layers,
         list biases
@@ -171,38 +189,38 @@ cpdef list feedforward_all(
     return _ff_all(x_dp, layers, biases)
 
 
-cdef list _ff_all_clipped(
-        np.ndarray[double, ndim=1] x_dp,
-        list layers,
-        list biases
-        # TODO: pass in activation function as an argument
-):
-    cdef int L = len(layers)
-    cdef int i = 0
-    cdef int j, layer_size
-    cdef np.ndarray[double, ndim=2] layer
-    cdef np.ndarray[double, ndim=1] current_vector = x_dp
-    cdef np.ndarray[double, ndim=1] vector
-    cdef list activations = []
-
-    while i < L:
-        layer_size = len(layers[i])
-        vector = np.zeros(layer_size)
-        layer = layers[i]
-        for j in range(layer_size):
-            vector[j] = clipped_sigmoid( dot(layer[j], current_vector) + biases[i][j] )
-        current_vector = vector
-        activations.append(current_vector)
-        i += 1
-    return activations
-
-cpdef list feedforward_all_clipped(
-        np.ndarray[double, ndim=1] x_dp,
-        list layers,
-        list biases
-        # TODO: pass in activation function as an argument
-):
-    return _ff_all_clipped(x_dp, layers, biases)
+# cdef list _ff_all_clipped(
+#         np.ndarray[double, ndim=1] x_dp,
+#         list layers,
+#         list biases
+#         # TODO: pass in activation function as an argument
+# ):
+#     cdef int L = len(layers)
+#     cdef int i = 0
+#     cdef int j, layer_size
+#     cdef np.ndarray[double, ndim=2] layer
+#     cdef np.ndarray[double, ndim=1] current_vector = x_dp
+#     cdef np.ndarray[double, ndim=1] vector
+#     cdef list activations = []
+#
+#     while i < L:
+#         layer_size = len(layers[i])
+#         vector = np.zeros(layer_size)
+#         layer = layers[i]
+#         for j in range(layer_size):
+#             vector[j] = clipped_sigmoid( dot(layer[j], current_vector) + biases[i][j] )
+#         current_vector = vector
+#         activations.append(current_vector)
+#         i += 1
+#     return activations
+#
+# cpdef list feedforward_all_clipped(
+#         np.ndarray[double, ndim=1] x_dp,
+#         list layers,
+#         list biases
+#         # TODO: pass in activation function as an argument
+# ):
+#     return _ff_all_clipped(x_dp, layers, biases)
 
 
 
@@ -269,22 +287,20 @@ cpdef _bp_single(
     list weights,
     list activations,
     np.ndarray[double, ndim=1] y,
-    np.ndarray[double, ndim=1] xdp
+    np.ndarray[double, ndim=1] xdp,
+    np.ndarray[double, ndim=1] output_activations
 ):
     cdef np.ndarray[double, ndim=1] layer_error
     cdef list deltas = []
     cdef list biases = []
     cdef np.ndarray[double, ndim=1] _activation_curr, _activation_prev, temp
-    cdef int layer_index = len(activations) - 1
+    cdef int layer_index = len(activations)
 
-    _activation_curr = activations[layer_index]
-    _activation_prev = activations[layer_index - 1]
+    # Layer error is the derivative of the Loss function at each layer, w.r.t. zL, where zL are the pre-activation values
 
-    layer_error = (_activation_curr - y) * _activation_curr * (1 - _activation_curr)
+    layer_error = output_activations - y
     while layer_index > 0:
-
-        _activation_curr = activations[layer_index]
-        _activation_prev = activations[layer_index - 1]
+        _activation_prev = activations[layer_index-1]
 
         deltas.append(
             np.outer(layer_error, _activation_prev)
@@ -293,9 +309,10 @@ cpdef _bp_single(
             layer_error
         )
 
+        # print(weights[layer_index].T, layer_error)
         temp = weights[layer_index].T @ layer_error
 
-        layer_error = temp * (_activation_prev) * (1 - _activation_prev)
+        layer_error = temp * np.heaviside(_activation_prev, 0)
         layer_index -= 1
 
     # have to handle the final layer separately because of how I stupidly structured this

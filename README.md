@@ -1,3 +1,5 @@
 # MLL
-README
-A machine learning library, in Cython
+
+### A machine learning library, in Python & Cython
+
+

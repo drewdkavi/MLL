@@ -1,6 +1,7 @@
 import cProfile
 
-from ModelsTemplate import Classifier
+from package.Models.ModelsTemplate import Classifier
+from package.Models.Classifier.DecisionTrees import generateRule
 import numpy as np
 import numpy.typing as npt
 import pstats
@@ -42,7 +43,6 @@ Picking the rule at each node which minimizes the weighted gini-impurity.
 
 '''
 
-from Classifier.DecisionTrees import generateRule
 
 
 class _Node:

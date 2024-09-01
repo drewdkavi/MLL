@@ -14,7 +14,7 @@ class LabelEncoder:
         self.get_dec = None
         self.N: int = 0
 
-    def create(self, y_classes: npt.NDArray[T]) -> None:
+    def build(self, y_classes: npt.NDArray[T]) -> None:
         unique = np.unique(y_classes)
         enum_unique = enumerate(unique)
         encode: Dict[T, int] = {label: int_id for int_id, label in enum_unique}

@@ -4,7 +4,10 @@ import numpy
 
 setup(
     ext_modules=cythonize(
-        "generateRule.pyx", compiler_directives={"language_level": "3", "profile": True}, annotate=True
+        [
+            'package//Models//Classifier//DecisionTrees//generateRule.pyx',
+        ],
+        compiler_directives={"language_level": "3", "profile": True}, annotate=True
     ),
     include_dirs=[numpy.get_include()],
 )

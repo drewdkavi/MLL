@@ -201,8 +201,6 @@ class RandomForest(Classifier):
 
     def predict(self, x_dp: npt.NDArray[float]) -> int | float | str:
 
-        # c
-
         preds = np.zeros(self._num_classes)
 
         for i in range(self.num_estimators):
