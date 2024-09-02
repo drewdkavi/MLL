@@ -3,8 +3,8 @@
 ### A machine learning library (MLL), in Python & Cython
 
 <p align="center">
-  <img src="./images/spiral_good2.png" alt="Twin Spiral Data" width="200"/>
-  <img src="./images/2class.png" alt="Two Classes" width="200"/>
+  <img src="./images/spiral_good2.png" alt="Twin Spiral Data" width="500"/>
+  <img src="./images/2class.png" alt="Two Classes" width="500"/>
 </p>
 
 This is a machine learning library, made from scratch to challenge myself. No tutorials or previous
@@ -24,18 +24,54 @@ code implementation of these Ml models were used.
 * A suite of useful tools for data cleaning, preparation, and visualisation
 * Some toy data sets generators
 
+
 #### Setup:  
 Clone the repo:  
-'''bash
 
-git clone <this-repo> 
+    git clone https://github.com/DdkCode/MLL
 
-'''
+Navigate to the repo and install the prerequistes:
+*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for comparisons and visualisation* 
 
+    pip install -r requirements.txt
+    
+   Build Cython files:
+  
+    python setup.py
 
+Use the library - to see some demonstrations of it run:
 
+    python main.py
 
+#### Example Usage
 
-
-
-
+    from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
+    from package.Tools import LabelEncoder, split_test_train, map_categorical
+    
+    # DATA:
+    Xs, ys = load_data()
+	
+	# Clean/Pre-process
+	le = LabelEncoder().build(ys)
+	ys_enc = le.fit_transform(ys)
+	
+	x_train, x_test, y_train, y_test = split_test_train(Xs, ys_enc, 0.25)
+	
+	#Maps i -> [0, ..., 1, ..0] in the i-th position
+	ys_train_ohe = map_categorical(y_train, NUM_CATEGORIES)
+	
+	# Initialise and train model:
+	snn = SequentialNeuralNetworkClassifier(
+		INPUT_DIM,
+		NUM_CATEGORIES,
+		INTERNAL_LAYERS = [16, 16], 
+		EPOCHS = 200,
+		learning_rate = 0.01
+	)
+	snn.train(x_train, ys_train_ohe)
+	
+	# Get test results:
+	result = snn.test(x_test, y_test)
+	print(f"F1-macro - {result.f1.average_score()}")
+	
+    
