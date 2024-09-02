@@ -1,16 +1,21 @@
 # cython: profile=True
+from libc.stdlib cimport rand
 import numpy as np
 cimport numpy as np
 
-cpdef generateRule_cy(
+
+
+cpdef generateRuleRF_cy(
         np.ndarray[double, ndim=2] XS,
         np.ndarray[long, ndim=1] YS,
         long INP_DIM,
-        long NUM_CATEGORIES
+        long NUM_CATEGORIES,
+        int SUBSAMPLE_SIZE
                    ):
 
-    cdef int j
-    cdef int i, dim_index, datapoint_index, count_left, count_right, count_left_best
+    cdef int j, k = 0
+    cdef int i, datapoint_index, count_left, count_right, count_left_best
+    cdef long dim_index
 
     cdef int N = len(XS)
 
@@ -29,8 +34,9 @@ cpdef generateRule_cy(
     cdef np.ndarray[long, ndim=1] sorted_indicies, best_ordering
 
 
-    for dim_index in range(INP_DIM):
 
+    while k < min(N, SUBSAMPLE_SIZE):
+        dim_index = rand() % INP_DIM
         sorted_indicies = np.argsort(XS[:, dim_index])
 
         XST = XS[sorted_indicies]
@@ -84,6 +90,7 @@ cpdef generateRule_cy(
         if gini_best == 0:
             break
 
+        k += 1
 
     xs_l, xs_r = np.split(XS[best_ordering], [count_left_best])
     ys_l, ys_r = np.split(YS[best_ordering], [count_left_best])
