@@ -57,8 +57,7 @@ Use the library - to see some demonstrations of it run:
 	
 	x_train, x_test, y_train, y_test = split_test_train(Xs, ys_enc, 0.25)
 	
-	#Maps i -> [0, ..., 1, ..0] in the i-th position
-	ys_train_ohe = map_categorical(y_train, NUM_CATEGORIES)
+	ys_train_ohe = map_categorical(y_train, NUM_CATEGORIES)  # Maps i -> [0, ..., 1, ..0] in the i-th position
 	
 	# Initialise and train model:
 	snn = SequentialNeuralNetworkClassifier(
