@@ -39,7 +39,7 @@ Build Cython files:
   
     python setup.py
 
-Use the library - to see some demonstrations of it run:
+Use the library - *to see some demonstrations of the library in action run:*
 
     python main.py
 
@@ -47,7 +47,7 @@ Use the library - to see some demonstrations of it run:
 
     from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
     from package.Tools import LabelEncoder, split_test_train, map_categorical
-    from package.data import load_data()
+    from package.data import load_data
     
     # DATA:
     Xs, ys = load_data()
