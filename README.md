@@ -76,5 +76,73 @@ result = snn.test(x_test, y_test)
 print(f"F1-macro - {result.f1.average_score()}")
 
 ```
-	
+
+####Structure:
+```sh
+.
+├── README.md
+├── images
+│   ├── 2class.png
+│   └── spiral_good2.png
+├── main.py
+├── package
+│   ├── Models
+│   │   ├── Classifier
+│   │   │   ├── DecisionTrees
+│   │   │   │   ├── DecisionTreeCython.py
+│   │   │   │   ├── generateRule.pyx
+│   │   │   │   └── setup.py
+│   │   │   ├── LogisticClassification
+│   │   │   │   └── LogisticReg.py
+│   │   │   ├── Random_Forest
+│   │   │   │   ├── RandomForest.py
+│   │   │   │   ├── generateRuleRF.pyx
+│   │   │   │   └── setup.py
+│   │   │   ├── ResultObjects.py
+│   │   │   ├── Rotation_Forest
+│   │   │   │   ├── RandomForest.py
+│   │   │   │   ├── generateRuleRF.pyx
+│   │   │   │   └── setup.py
+│   │   │   └── SVM
+│   │   │       └── Binary_SVM.py
+│   │   ├── ModelsTemplate.py
+│   │   ├── Neural_Network
+│   │   │   ├── SNN.pyx
+│   │   │   ├── SNN2.pyx
+│   │   │   ├── SequentialNeuralNetworkClassifier.py
+│   │   │   ├── SequentialNeuralNetworkRegressor.py
+│   │   │   ├── __init__.py
+│   │   │   └── setup.py
+│   │   ├── NormWrapper.py
+│   │   ├── Regressor
+│   │   │   └── LinearRegression
+│   │   │       └── LeastSquare.py
+│   │   └── norm_objects.py
+│   ├── Tools
+│   │   ├── Extras.py
+│   │   ├── LabelEncoder.py
+│   │   ├── SplitTestTrain.py
+│   │   ├── __init__.py
+│   │   └── to_categorical.py
+│   ├── data
+│   │   ├── Generator.py
+│   │   └── __init__.py
+│   └── demos
+│       ├── bsvm_OVO_demo.py
+│       ├── bsvm_OVR_demo.py
+│       ├── decisionTree_demo.py
+│       ├── llsr_demo.py
+│       ├── logreg_demo.py
+│       ├── randomForest_demo.py
+│       ├── rf_irises.py
+│       ├── snn_2class_blobs.py
+│       ├── snn_4class_blobs_trial.py
+│       ├── snn_breastCancer.py
+│       ├── snn_digits.py
+│       ├── snn_irises.py
+│       └── snn_spiral.py
+├── requirements.txt
+└── setup.py
+```
+
     
