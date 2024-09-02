@@ -25,7 +25,7 @@ code implementation of these Ml models were used.
 * Some toy data sets generators
 
 
-#### Setup:  
+### Setup:  
 Clone the repo:  
 
     git clone https://github.com/DdkCode/MLL
@@ -43,7 +43,7 @@ Use the library - to see some demonstrations of it run:
 
     python main.py
 
-#### Example Usage
+### Example Usage
 
     from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
     from package.Tools import LabelEncoder, split_test_train, map_categorical
