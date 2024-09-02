@@ -15,6 +15,7 @@ class BinarySVMLinearSeparable(Classifier):
             raise ValueError("Model must have input dimension >= 0")
         self._INPUT_DIM = input_dim
         self._weights = [1] * (self._INPUT_DIM + 1)  # this is our 'b'
+        self._num_classes = 2
 
     def train(self, x_train: npt.NDArray[npt.NDArray[float]], y_train: npt.NDArray[int]):
 
@@ -49,20 +50,11 @@ class BinarySVMLinearSeparable(Classifier):
         else:
             return -1
 
-    def test(self, x_test, y_true):
-        hit_count = 0
-        for x_i, y_i in zip(x_test, y_true):
-            pred = self.predict(x_i)
-            if pred == y_i:
-                hit_count += 1
-        return hit_count / len(y_true)
-
-
 class BinarySVMLinear(Classifier):
-    def __init__(self, input_dim: int):
+    def __init__(self, input_dim: int, num_classes: int):
         if input_dim < 0:
             raise ValueError("Model must have input dimension >= 0")
-        self._INPUT_DIM = input_dim
+        super().__init__(input_dim, num_classes)
         self._weights = [1] * (self._INPUT_DIM + 1)  # this is our 'b'
 
     def train(self, x_train: npt.NDArray[npt.NDArray[float]], y_train: npt.NDArray[int]):
@@ -122,21 +114,12 @@ class BinarySVMLinear(Classifier):
         else:
             return -1
 
-    def test(self, x_test, y_true):
-        hit_count = 0
-        for x_i, y_i in zip(x_test, y_true):
-            pred = self.predict(x_i)
-            if pred == y_i:
-                hit_count += 1
-        return hit_count / len(y_true)
-
 
 class SVMLinearOVR(Classifier):
     """k-way Linear separator for k way linearly separable data"""
 
     def __init__(self, *, input_dim: int = 0, num_classes: int = 0):
-        self._INPUT_DIM = input_dim
-        self._num_classes = num_classes
+        super().__init__(input_dim, num_classes)
         self._weights = [[0] * (input_dim + 1)] * num_classes
 
     def train(self, x_train: npt.NDArray[npt.NDArray[float]], y_train: npt.NDArray[int]):
@@ -198,21 +181,12 @@ class SVMLinearOVR(Classifier):
         classification: int = max(range(len(p_vals)), key=lambda i: p_vals[i])
         return classification
 
-    def test(self, x_test: npt.NDArray[npt.NDArray[float]], y_true: npt.NDArray[int]):
-        hit_count = 0
-        for x_i, y_i in zip(x_test, y_true):
-            pred = self.predict(x_i)
-            if pred == y_i:
-                hit_count += 1
-        return hit_count / len(y_true)
-
 
 class SVMLinearOVRSeparable(Classifier):
     """k-way Linear separator for k way linearly separable data"""
 
-    def __init__(self, *, input_dim: int = 0, num_classes: int = 0):
-        self._INPUT_DIM = input_dim
-        self._num_classes = num_classes
+    def __init__(self, input_dim: int, num_classes: int):
+        super().__init__(input_dim, num_classes)
         self._weights = [[0] * (input_dim + 1)] * num_classes
 
     def train(self, x_train: npt.NDArray[npt.NDArray[float]], y_train: npt.NDArray[int]):
@@ -223,7 +197,7 @@ class SVMLinearOVRSeparable(Classifier):
         # we are done!
         for i in range(self._num_classes):
             print(f"Training O vs. R for class {i}: ", end="\r")
-            self._weights[i] = self._trainOVO(x_train, y_train, i)
+            self._weights[i] = self._trainOVR(x_train, y_train, i)
         return self._weights
 
     def _trainOVR(self, x_train, y_train, i: int):
@@ -274,9 +248,8 @@ class SVMLinearOVO(Classifier):
     # raise NotImplementedError
     """k-way Linear separator for k way linearly separable data"""
 
-    def __init__(self, *, input_dim: int = 0, num_classes: int = 0):
-        self._INPUT_DIM = input_dim
-        self._num_classes = num_classes
+    def __init__(self, input_dim: int, num_classes: int):
+        super().__init__(input_dim, num_classes)
         # self._weights = [[[0] * (input_dim + 1)] * num_classes] * num_classes
         self._weights = np.zeros((num_classes, num_classes, input_dim + 1))
 
@@ -351,12 +324,3 @@ class SVMLinearOVO(Classifier):
                 max_v = t
                 max_i = i
         return max_i
-
-    def test(self, x_test: npt.NDArray[npt.NDArray[float]], y_true: npt.NDArray[int]):
-        print('Testing... ')
-        hit_count = 0
-        for x_i, y_i in zip(x_test, y_true):
-            pred = self.predict(x_i)
-            if pred == y_i:
-                hit_count += 1
-        return hit_count / len(y_true)

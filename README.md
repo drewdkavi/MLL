@@ -26,8 +26,10 @@ code implementation of these Ml models were used.
 
 #### Setup:  
 Clone the repo:  
-'''bash  
+'''bash
+
 git clone <this-repo> 
+
 '''
 
 

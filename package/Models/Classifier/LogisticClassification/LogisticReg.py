@@ -15,6 +15,10 @@ EPSILON = 0.01
 
 @nb.vectorize(["float64(float64)", "float32(float32)"])
 def sigmoid(z: float) -> float:
+    if z >= 500:
+        z = 500
+    if z <= -500:
+        z = -500
     return 1.0 / (1.0 + np.exp(-z))
 
 
@@ -48,6 +52,7 @@ class BinaryLogisticRegression(Classifier):
         self._INPUT_DIM = input_dim
         self._MODEL_INPUT_DIM = input_dim + 1
         self._weights = [0.5] * self._MODEL_INPUT_DIM  # this is our 'b'
+        self._num_classes = 2
 
     def train(self, x_train: npt.NDArray[npt.NDArray[float]], y_train: npt.NDArray[int]):
 
@@ -104,10 +109,3 @@ class BinaryLogisticRegression(Classifier):
         else:
             return 0
 
-    def test(self, x_test: npt.NDArray[npt.NDArray[float]], y_true: npt.NDArray[int]):
-
-        hit_count = 0
-        for x_i, y_i in zip(x_test, y_true):
-            if self.predict(x_i) == y_i:
-                hit_count += 1
-        return hit_count / len(y_true)

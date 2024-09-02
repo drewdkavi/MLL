@@ -44,7 +44,7 @@ def demo():
 
     # Display results of testing the model
 
-    print(f"accuracy: {svm.test(x_test, y_test)}")
+    print(f"accuracy: {svm.test(x_test, y_test).accuracy()}")
 
 
 

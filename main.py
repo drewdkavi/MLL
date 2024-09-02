@@ -19,10 +19,10 @@ def test():
 
     """Some other demos to check out"""
 
-    # logreg_demo.demo()
-    # llsr_demo.demo()
-    # bsvm_OVR_demo.demo()
-    # bsvm_OVO_demo.demo()
+    logreg_demo.demo()
+    llsr_demo.demo()
+    bsvm_OVR_demo.demo()
+    bsvm_OVO_demo.demo()
     pass
 
 
@@ -73,5 +73,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
-    # test()
+    # main()
+    test()

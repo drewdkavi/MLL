@@ -44,4 +44,5 @@ def demo():
 
     # Test Model
 
-    print(f"Accuracy - : {blr.test(x_test, y_test)}")
+    results = blr.test(x_test, y_test)
+    print(f"Accuracy - : {results.accuracy()}")
