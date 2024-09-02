@@ -8,7 +8,7 @@ import cProfile, pstats
 
 
 def demo():
-    print("Random Forest Demo - 100k data points")
+    print("Random Forest Demo - 100k data points, 30 estimator decision trees")
     #  DATA:
 
     NUM_DATA_POINTS = 100_000
