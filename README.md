@@ -56,9 +56,7 @@ Use the library - *to see some demonstrations of the library in action run:*
 	le = LabelEncoder()
 	le.build(ys)
 	ys_enc = le.fit_transform(ys)
-	
 	x_train, x_test, y_train, y_test = split_test_train(Xs, ys_enc, 0.25)
-	
 	ys_train_ohe = map_categorical(y_train, NUM_CATEGORIES)  # Maps i -> [0, ..., 1, ..0] in the i-th position
 	
 	# Initialise and train model:
