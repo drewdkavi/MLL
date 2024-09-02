@@ -77,7 +77,7 @@ print(f"F1-macro - {result.f1.average_score()}")
 
 ```
 
-####Structure:
+#### Structure:
 ```sh
 .
 ├── README.md
