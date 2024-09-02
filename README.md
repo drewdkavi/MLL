@@ -28,32 +28,33 @@ code implementation of these Ml models were used.
 ### Setup:  
 Clone the repo:  
 
-    git clone https://github.com/DdkCode/MLL
+	git clone https://github.com/DdkCode/MLL
 
 Navigate to the repo and install the prerequistes:
 *Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for comparisons and visualisation* 
 
-    pip install -r requirements.txt
+	pip install -r requirements.txt
     
 Build Cython files:
   
-    python setup.py
+	python setup.py
 
 Use the library - *to see some demonstrations of the library in action run:*
 
-    python main.py
+	python main.py
 
 ### Example Usage
 
-    from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
-    from package.Tools import LabelEncoder, split_test_train, map_categorical
-    from package.data import load_data
-    
-    # DATA:
-    Xs, ys = load_data()
+	from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
+	from package.Tools import LabelEncoder, split_test_train, map_categorical
+	from package.data import load_data
+	
+	# DATA:
+	Xs, ys = load_data()
 	
 	# Clean/Pre-process
-	le = LabelEncoder().build(ys)
+	le = LabelEncoder()
+	le.build(ys)
 	ys_enc = le.fit_transform(ys)
 	
 	x_train, x_test, y_train, y_test = split_test_train(Xs, ys_enc, 0.25)
