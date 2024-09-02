@@ -17,6 +17,16 @@ class Model(ABC):
 
 
 class Regressor(Model):
+
+    def __init__(
+            self,
+            input_dimension: int
+            ):
+
+        if input_dimension < 1:
+            raise ValueError(f"input_dimension must be specified: {input_dimension}")
+        self._INPUT_DIM: int = input_dimension
+
     @abstractmethod
     def train(self, x_train: npt.NDArray[npt.NDArray[float]], y_train: npt.NDArray[int | float]):
         pass

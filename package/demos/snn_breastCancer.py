@@ -27,7 +27,7 @@ def demo():
     #  -> high dimensionality so take a low learning rate
 
     nn = SequentialNeuralNetworkRegressor(
-        30, 2,
+        30, output_dimension=2,
         INTERNAL_LAYERS=[64, 64],
         EPOCHS=2000, learning_rate=0.0001
     )

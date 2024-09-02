@@ -16,7 +16,7 @@ class SequentialNeuralNetworkRegressor(Regressor):
                  learning_rate: float = 0.01,
                  EPOCHS: int = 10,
                  INTERNAL_LAYERS: list[int] | None = None):
-        super().__init__(input_dimension, output_dimension)
+        super().__init__(input_dimension)
         layers = INTERNAL_LAYERS + [output_dimension] if INTERNAL_LAYERS else [output_dimension]
         self.epochs = EPOCHS
         self.lr = learning_rate

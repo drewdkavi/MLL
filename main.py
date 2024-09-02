@@ -13,27 +13,27 @@ def clear():
 
 def main():
 
-    decisionTree_demo.demo()
-    time.sleep(3)
-    clear()
+    # decisionTree_demo.demo()
+    # time.sleep(3)
+    # clear()
+    #
+    # randomForest_demo.demo()
+    # time.sleep(3)
+    # clear()
 
-    randomForest_demo.demo()
-    time.sleep(3)
-    clear()
-
-    snn_breastCancer.demo()
-    time.sleep(3)
-    clear()
+    # snn_breastCancer.demo()
+    # time.sleep(3)
+    # clear()
 
     snn_2class_blobs.demo()
     time.sleep(3)
     clear()
 
-    snn_4class_blobs_trial.demo()
-    time.sleep(3)
-    clear()
-
-    snn_spiral.demo()
+    # snn_4class_blobs_trial.demo()
+    # time.sleep(3)
+    # clear()
+    #
+    # snn_spiral.demo()
 
 
 if __name__ == '__main__':

@@ -1,11 +1,12 @@
 from distutils.core import setup
+from setuptools import Extension
 from Cython.Build import cythonize
 import numpy
 
 setup(
     ext_modules=cythonize(
         [
-            'package//Models//Classifier//Random_Forest//generateRuleRF.pyx',
+            Extension('generateRuleRF', ['generateRuleRF.pyx'],)
         ],
         compiler_directives={"language_level": "3", "profile": True}, annotate=True
     ),
