@@ -8,10 +8,10 @@ import cProfile, pstats
 
 
 def demo():
-    print("Random Forest Demo - 10k data points")
+    print("Random Forest Demo - 100k data points")
     #  DATA:
 
-    NUM_DATA_POINTS = 10_000
+    NUM_DATA_POINTS = 100_000
     EPSILON = 0.25
 
     Xs, ys = get_4blobs(NUM_DATA_POINTS, EPSILON)
@@ -24,7 +24,7 @@ def demo():
 
     #  Initialise and train model
 
-    rf = RandomForest.RandomForest(2, 4, NUM_ESTIMATORS=200, COL_SUBSAMPLE_SIZE=4)
+    rf = RandomForest.RandomForest(2, 4, NUM_ESTIMATORS=30, COL_SUBSAMPLE_SIZE=4)
 
     p1 = cProfile.Profile()
     p1.enable()
@@ -45,7 +45,7 @@ def demo():
 
     # p2 = cProfile.Profile()
     # p2.enable()
-    model = RandomForestClassifier(n_estimators=200)
+    model = RandomForestClassifier(n_estimators=30)
     model.fit(x_train, y_train)
     # p2.disable()
     # stats = pstats.Stats(p2).sort_stats('cumtime')

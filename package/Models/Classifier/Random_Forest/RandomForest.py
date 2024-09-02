@@ -182,6 +182,7 @@ class RandomForest(Classifier):
         # self.trees = np.array(pool.map(_parallel_train, range(self.num_estimators)))
 
         for i in range(self.num_estimators):
+            print(f"Training tree - {i}/{self.num_estimators}", end='\r')
             bootstrapped_indicies = boostrapChoice(N)
             x_train_bootstrapped, y_train_bootstrapped = x_train[bootstrapped_indicies], y_train[bootstrapped_indicies]
             tree_i = self._make_tree(x_train_bootstrapped, y_train_bootstrapped)

@@ -37,7 +37,7 @@ def demo():
 
     nn = SequentialNeuralNetworkClassifier(
         2, 2,
-        INTERNAL_LAYERS=[8, 8, 8],
+        INTERNAL_LAYERS=[32, 20],
         EPOCHS=2000,
         learning_rate=0.03
     )

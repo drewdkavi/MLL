@@ -1,4 +1,6 @@
 def precision(tp, fp, _):
+    if tp == 0:
+        return 0
     return tp / (tp + fp)
 
 
@@ -8,6 +10,8 @@ def p(ct):
 
 
 def recall(tp, _, fn):
+    if tp == 0:
+        return 0
     return tp / (tp + fn)
 
 
@@ -17,7 +21,11 @@ def r(ct):
 
 
 def f1_metric(category_tuple):
-    return (2 * p(category_tuple) * r(category_tuple)) / (p(category_tuple) + r(category_tuple))
+    pv = p(category_tuple)
+    rv = r(category_tuple)
+    if pv + rv == 0:
+        return 0
+    return (2 * pv * rv) / (pv + rv)
 
 
 class F1Object:

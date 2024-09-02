@@ -1,35 +1,27 @@
-import numpy as np
-import math
-import random
-import time
-import matplotlib.pyplot as plt
-
 from package.Models.Neural_Network import SequentialNeuralNetworkClassifier, SequentialNeuralNetworkRegressor
 from package.Tools import split_test_train
 from package.Tools import map_categorical, map_decategorical
-from sklearn.datasets import load_iris, load_breast_cancer
+from sklearn.datasets import load_iris
 
 
 def demo():
-    print("Breast Cancer Data Set")
-
+    print("SNN on the Iris Data Set")
 
     #  Fetch scikit-learns data
 
-    xs, ys = load_breast_cancer(return_X_y=True)
+    xs, ys = load_iris(return_X_y=True)
 
     #  Clean/Process Data:
 
-    ohe_ys = map_categorical(ys, 2)
-    x_train, x_test, y_train, y_test = split_test_train(xs, ohe_ys, 0.5)
+    ohe_ys = map_categorical(ys, 3)
+    x_train, x_test, y_train, y_test = split_test_train(xs, ohe_ys, 0.4)
 
     #  Initialise and train model
-    #  -> high dimensionality so take a low learning rate
 
     nn = SequentialNeuralNetworkClassifier(
-        30, 2,
-        INTERNAL_LAYERS=[64, 64],
-        EPOCHS=2000, learning_rate=0.0001
+        4, 3,
+        INTERNAL_LAYERS=[10, 10],
+        EPOCHS=150, learning_rate=0.03
     )
     nn.train(x_train, y_train)
 

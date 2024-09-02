@@ -388,7 +388,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class="cython line score-0">&#xA0;<span class="">009</span>: <span class="c"># Activation functions</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">010</span>: </pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">011</span>: <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">double</span> <span class="n">val</span><span class="p">):</span></pre>
-<pre class='cython code score-6 '>static double __pyx_f_14Neural_Network_3SNN_sigmoid(double __pyx_v_val) {
+<pre class='cython code score-6 '>static double __pyx_f_3SNN_sigmoid(double __pyx_v_val) {
   double __pyx_r;
   <span class='trace'>__Pyx_TraceDeclarations</span>
   <span class='trace'>__Pyx_TraceCall</span>("sigmoid", __pyx_f[0], 11, 0, <span class='error_goto'>__PYX_ERR(0, 11, __pyx_L1_error)</span>);
@@ -399,7 +399,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.sigmoid", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.sigmoid", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   <span class='trace'>__Pyx_TraceReturn</span>(Py_None, 0);
@@ -455,7 +455,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </pre><pre class="cython line score-0">&#xA0;<span class="">018</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">019</span>: </pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">020</span>: <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">clipped_sigmoid</span><span class="p">(</span><span class="n">double</span> <span class="n">val</span><span class="p">):</span></pre>
-<pre class='cython code score-6 '>static double __pyx_f_14Neural_Network_3SNN_clipped_sigmoid(double __pyx_v_val) {
+<pre class='cython code score-6 '>static double __pyx_f_3SNN_clipped_sigmoid(double __pyx_v_val) {
   double __pyx_r;
   <span class='trace'>__Pyx_TraceDeclarations</span>
   <span class='trace'>__Pyx_TraceCall</span>("clipped_sigmoid", __pyx_f[0], 20, 0, <span class='error_goto'>__PYX_ERR(0, 20, __pyx_L1_error)</span>);
@@ -466,7 +466,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_5);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.clipped_sigmoid", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.clipped_sigmoid", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   <span class='trace'>__Pyx_TraceReturn</span>(Py_None, 0);
@@ -530,7 +530,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">026</span>: </pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">027</span>: <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">relu</span><span class="p">(</span><span class="n">double</span> <span class="n">val</span><span class="p">):</span></pre>
-<pre class='cython code score-6 '>static double __pyx_f_14Neural_Network_3SNN_relu(double __pyx_v_val) {
+<pre class='cython code score-6 '>static double __pyx_f_3SNN_relu(double __pyx_v_val) {
   double __pyx_r;
   <span class='trace'>__Pyx_TraceDeclarations</span>
   <span class='trace'>__Pyx_TraceCall</span>("relu", __pyx_f[0], 27, 0, <span class='error_goto'>__PYX_ERR(0, 27, __pyx_L1_error)</span>);
@@ -541,7 +541,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_2);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_3);
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_4);
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.relu", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.relu", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   <span class='trace'>__Pyx_TraceReturn</span>(Py_None, 0);
@@ -593,7 +593,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">029</span>: </pre>
 <pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">030</span>: <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">leaky_relu</span><span class="p">(</span><span class="n">double</span> <span class="n">val</span><span class="p">):</span></pre>
-<pre class='cython code score-2 '>static double __pyx_f_14Neural_Network_3SNN_leaky_relu(double __pyx_v_val) {
+<pre class='cython code score-2 '>static double __pyx_f_3SNN_leaky_relu(double __pyx_v_val) {
   double __pyx_v_alpha;
   double __pyx_r;
   <span class='trace'>__Pyx_TraceDeclarations</span>
@@ -601,7 +601,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 /* … */
   /* function exit code */
   __pyx_L1_error:;
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.leaky_relu", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.leaky_relu", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   <span class='trace'>__Pyx_TraceReturn</span>(Py_None, 0);
@@ -628,7 +628,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class="cython line score-0">&#xA0;<span class="">038</span>: <span class="c">### --- Alias np.dot to dot ---------------------------------------------------------------------------------------- ###</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">039</span>: </pre>
 <pre class="cython line score-21" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">040</span>: <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">dot</span><span class="p">(</span></pre>
-<pre class='cython code score-21 '>static double __pyx_f_14Neural_Network_3SNN_dot(PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_x) {
+<pre class='cython code score-21 '>static double __pyx_f_3SNN_dot(PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_x) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_w;
   __Pyx_Buffer __pyx_pybuffer_w;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x;
@@ -667,7 +667,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_w.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.dot", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.dot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -718,7 +718,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class="cython line score-0">&#xA0;<span class="">047</span>: <span class="c">### ----- Errors --------------------------------------------------------------------------------------------------- ###</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">048</span>: </pre>
 <pre class="cython line score-22" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">049</span>: <span class="k">cdef</span> <span class="kt">double</span> <span class="nf">mse</span><span class="p">(</span></pre>
-<pre class='cython code score-22 '>static double __pyx_f_14Neural_Network_3SNN_mse(PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_x) {
+<pre class='cython code score-22 '>static double __pyx_f_3SNN_mse(PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_x) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_w;
   __Pyx_Buffer __pyx_pybuffer_w;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x;
@@ -758,7 +758,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_w.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.mse", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.mse", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   goto __pyx_L2;
   __pyx_L0:;
@@ -829,7 +829,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class="cython line score-0">&#xA0;<span class="">070</span>: <span class="sd">&#39;&#39;&#39;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">071</span>: </pre>
 <pre class="cython line score-31" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">072</span>: <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span>[<span class="nf">double</span><span class="p">,</span> <span class="nf">ndim</span><span class="o">=</span><span class="mf">1</span><span class="p">]</span> <span class="n">_ff</span><span class="p">(</span></pre>
-<pre class='cython code score-31 '>static PyArrayObject *__pyx_f_14Neural_Network_3SNN__ff(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+<pre class='cython code score-31 '>static PyArrayObject *__pyx_f_3SNN__ff(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   int __pyx_v_L;
   int __pyx_v_i;
   int __pyx_v_j;
@@ -885,7 +885,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_vector.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._ff", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._ff", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1037,7 +1037,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <pre class='cython code score-50 '>      __pyx_t_3 = <span class='pyx_c_api'>__Pyx_GetItemInt</span>(((PyObject *)__pyx_v_layer), __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 0, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
       if (!(likely(((__pyx_t_3) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) <span class='error_goto'>__PYX_ERR(0, 91, __pyx_L1_error)</span>
-      __pyx_t_15 = __pyx_f_14Neural_Network_3SNN_dot(((PyArrayObject *)__pyx_t_3), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 91, __pyx_L1_error)</span>
+      __pyx_t_15 = __pyx_f_3SNN_dot(((PyArrayObject *)__pyx_t_3), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 91, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_3 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
@@ -1056,7 +1056,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_15 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_5); if (unlikely((__pyx_t_15 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 91, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_16 = __pyx_f_14Neural_Network_3SNN_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 91, __pyx_L1_error)</span>
+      __pyx_t_16 = __pyx_f_3SNN_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 91, __pyx_L1_error)</span>
       __pyx_t_17 = __pyx_v_j;
       __pyx_t_18 = -1;
       if (__pyx_t_17 &lt; 0) {
@@ -1099,14 +1099,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">095</span>: </pre>
 <pre class="cython line score-111" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">096</span>: <span class="k">cpdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span>[<span class="nf">double</span><span class="p">,</span> <span class="nf">ndim</span><span class="o">=</span><span class="mf">1</span><span class="p">]</span> <span class="n">feedforward</span><span class="p">(</span></pre>
-<pre class='cython code score-111 '>static PyObject *__pyx_pw_14Neural_Network_3SNN_1feedforward(PyObject *__pyx_self, 
+<pre class='cython code score-111 '>static PyObject *__pyx_pw_3SNN_1feedforward(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyArrayObject *__pyx_f_14Neural_Network_3SNN_feedforward(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyArrayObject *__pyx_f_3SNN_feedforward(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyArrayObject *__pyx_r = NULL;
@@ -1132,7 +1132,7 @@ static PyArrayObject *__pyx_f_14Neural_Network_3SNN_feedforward(PyArrayObject *_
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1145,15 +1145,15 @@ static PyArrayObject *__pyx_f_14Neural_Network_3SNN_feedforward(PyArrayObject *_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14Neural_Network_3SNN_1feedforward(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_3SNN_1feedforward(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_14Neural_Network_3SNN_1feedforward = {"feedforward", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14Neural_Network_3SNN_1feedforward, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14Neural_Network_3SNN_1feedforward(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_3SNN_1feedforward = {"feedforward", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3SNN_1feedforward, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3SNN_1feedforward(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -1250,14 +1250,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_x_dp), __pyx_ptype_5numpy_ndarray, 1, "x_dp", 0))) <span class='error_goto'>__PYX_ERR(0, 97, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_layers), (&amp;PyList_Type), 1, "layers", 1))) <span class='error_goto'>__PYX_ERR(0, 98, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_biases), (&amp;PyList_Type), 1, "biases", 1))) <span class='error_goto'>__PYX_ERR(0, 99, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_14Neural_Network_3SNN_feedforward(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
+  __pyx_r = __pyx_pf_3SNN_feedforward(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -1277,7 +1277,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+static PyObject *__pyx_pf_3SNN_feedforward(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyObject *__pyx_r = NULL;
@@ -1294,7 +1294,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
   }
   __pyx_pybuffernd_x_dp.diminfo[0].strides = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.strides[0]; __pyx_pybuffernd_x_dp.diminfo[0].shape = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.shape[0];
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_14Neural_Network_3SNN_feedforward(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)</span>
+  __pyx_t_1 = ((PyObject *)__pyx_f_3SNN_feedforward(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1309,7 +1309,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1325,7 +1325,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple__10);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple__10);
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_14Neural_Network_3SNN_1feedforward, 0, __pyx_n_s_feedforward, NULL, __pyx_n_s_Neural_Network_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__3));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_3SNN_1feedforward, 0, __pyx_n_s_feedforward, NULL, __pyx_n_s_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__3));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_feedforward, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 96, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
@@ -1337,7 +1337,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
 <pre class="cython line score-0">&#xA0;<span class="">101</span>: <span class="p">):</span></pre>
 <pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">102</span>:     <span class="k">return</span> <span class="n">_ff</span><span class="p">(</span><span class="n">x_dp</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">biases</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_14Neural_Network_3SNN__ff(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)</span>
+  __pyx_t_1 = ((PyObject *)__pyx_f_3SNN__ff(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
@@ -1345,7 +1345,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
 </pre><pre class="cython line score-0">&#xA0;<span class="">103</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">104</span>: </pre>
 <pre class="cython line score-31" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">105</span>: <span class="k">cdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span>[<span class="nf">double</span><span class="p">,</span> <span class="nf">ndim</span><span class="o">=</span><span class="mf">1</span><span class="p">]</span> <span class="n">_ff_clipped</span><span class="p">(</span></pre>
-<pre class='cython code score-31 '>static PyArrayObject *__pyx_f_14Neural_Network_3SNN__ff_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+<pre class='cython code score-31 '>static PyArrayObject *__pyx_f_3SNN__ff_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   int __pyx_v_L;
   int __pyx_v_i;
   int __pyx_v_j;
@@ -1401,7 +1401,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_vector.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._ff_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._ff_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1553,7 +1553,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
 <pre class='cython code score-50 '>      __pyx_t_3 = <span class='pyx_c_api'>__Pyx_GetItemInt</span>(((PyObject *)__pyx_v_layer), __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 0, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
       if (!(likely(((__pyx_t_3) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) <span class='error_goto'>__PYX_ERR(0, 124, __pyx_L1_error)</span>
-      __pyx_t_15 = __pyx_f_14Neural_Network_3SNN_dot(((PyArrayObject *)__pyx_t_3), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 124, __pyx_L1_error)</span>
+      __pyx_t_15 = __pyx_f_3SNN_dot(((PyArrayObject *)__pyx_t_3), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 124, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_3 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_3);
@@ -1572,7 +1572,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_15 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_5); if (unlikely((__pyx_t_15 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 124, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_16 = __pyx_f_14Neural_Network_3SNN_clipped_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 124, __pyx_L1_error)</span>
+      __pyx_t_16 = __pyx_f_3SNN_clipped_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 124, __pyx_L1_error)</span>
       __pyx_t_17 = __pyx_v_j;
       __pyx_t_18 = -1;
       if (__pyx_t_17 &lt; 0) {
@@ -1615,14 +1615,14 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_feedforward(CYTHON_UNUSED PyObje
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">128</span>: </pre>
 <pre class="cython line score-106" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">129</span>: <span class="k">cpdef</span> <span class="kt">np</span>.<span class="kt">ndarray</span>[<span class="nf">double</span><span class="p">,</span> <span class="nf">ndim</span><span class="o">=</span><span class="mf">1</span><span class="p">]</span> <span class="n">feedforward_clipped</span><span class="p">(</span></pre>
-<pre class='cython code score-106 '>static PyObject *__pyx_pw_14Neural_Network_3SNN_3feedforward_clipped(PyObject *__pyx_self, 
+<pre class='cython code score-106 '>static PyObject *__pyx_pw_3SNN_3feedforward_clipped(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyArrayObject *__pyx_f_14Neural_Network_3SNN_feedforward_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyArrayObject *__pyx_f_3SNN_feedforward_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyArrayObject *__pyx_r = NULL;
@@ -1648,7 +1648,7 @@ static PyArrayObject *__pyx_f_14Neural_Network_3SNN_feedforward_clipped(PyArrayO
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1661,15 +1661,15 @@ static PyArrayObject *__pyx_f_14Neural_Network_3SNN_feedforward_clipped(PyArrayO
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14Neural_Network_3SNN_3feedforward_clipped(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_3SNN_3feedforward_clipped(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_14Neural_Network_3SNN_3feedforward_clipped = {"feedforward_clipped", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14Neural_Network_3SNN_3feedforward_clipped, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14Neural_Network_3SNN_3feedforward_clipped(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_3SNN_3feedforward_clipped = {"feedforward_clipped", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3SNN_3feedforward_clipped, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3SNN_3feedforward_clipped(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -1766,14 +1766,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_x_dp), __pyx_ptype_5numpy_ndarray, 1, "x_dp", 0))) <span class='error_goto'>__PYX_ERR(0, 130, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_layers), (&amp;PyList_Type), 1, "layers", 1))) <span class='error_goto'>__PYX_ERR(0, 131, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_biases), (&amp;PyList_Type), 1, "biases", 1))) <span class='error_goto'>__PYX_ERR(0, 132, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
+  __pyx_r = __pyx_pf_3SNN_2feedforward_clipped(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -1793,7 +1793,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+static PyObject *__pyx_pf_3SNN_2feedforward_clipped(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyObject *__pyx_r = NULL;
@@ -1810,7 +1810,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
   }
   __pyx_pybuffernd_x_dp.diminfo[0].strides = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.strides[0]; __pyx_pybuffernd_x_dp.diminfo[0].shape = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.shape[0];
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_14Neural_Network_3SNN_feedforward_clipped(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)</span>
+  __pyx_t_1 = ((PyObject *)__pyx_f_3SNN_feedforward_clipped(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1825,7 +1825,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -1837,7 +1837,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
   return __pyx_r;
 }
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_14Neural_Network_3SNN_3feedforward_clipped, 0, __pyx_n_s_feedforward_clipped, NULL, __pyx_n_s_Neural_Network_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__4));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_3SNN_3feedforward_clipped, 0, __pyx_n_s_feedforward_clipped, NULL, __pyx_n_s_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__4));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_feedforward_clipped, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 129, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
@@ -1850,7 +1850,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
 <pre class="cython line score-0">&#xA0;<span class="">134</span>: <span class="p">):</span></pre>
 <pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">135</span>:     <span class="k">return</span> <span class="n">_ff_clipped</span><span class="p">(</span><span class="n">x_dp</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">biases</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>((PyObject *)__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_14Neural_Network_3SNN__ff_clipped(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)</span>
+  __pyx_t_1 = ((PyObject *)__pyx_f_3SNN__ff_clipped(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases));<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
@@ -1860,7 +1860,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
 <pre class="cython line score-0">&#xA0;<span class="">138</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">139</span>: </pre>
 <pre class="cython line score-32" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">140</span>: <span class="k">cdef</span> <span class="kt">list</span> <span class="nf">_ff_all</span><span class="p">(</span></pre>
-<pre class='cython code score-32 '>static PyObject *__pyx_f_14Neural_Network_3SNN__ff_all(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+<pre class='cython code score-32 '>static PyObject *__pyx_f_3SNN__ff_all(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   int __pyx_v_L;
   int __pyx_v_i;
   int __pyx_v_j;
@@ -1917,7 +1917,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_vector.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._ff_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._ff_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2074,7 +2074,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
 <pre class='cython code score-50 '>      __pyx_t_2 = <span class='pyx_c_api'>__Pyx_GetItemInt</span>(((PyObject *)__pyx_v_layer), __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 0, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
       if (!(likely(((__pyx_t_2) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) <span class='error_goto'>__PYX_ERR(0, 159, __pyx_L1_error)</span>
-      __pyx_t_15 = __pyx_f_14Neural_Network_3SNN_dot(((PyArrayObject *)__pyx_t_2), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 159, __pyx_L1_error)</span>
+      __pyx_t_15 = __pyx_f_3SNN_dot(((PyArrayObject *)__pyx_t_2), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 159, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
@@ -2093,7 +2093,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_15 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_5); if (unlikely((__pyx_t_15 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 159, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_16 = __pyx_f_14Neural_Network_3SNN_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 159, __pyx_L1_error)</span>
+      __pyx_t_16 = __pyx_f_3SNN_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 159, __pyx_L1_error)</span>
       __pyx_t_17 = __pyx_v_j;
       __pyx_t_18 = -1;
       if (__pyx_t_17 &lt; 0) {
@@ -2138,14 +2138,14 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_2feedforward_clipped(CYTHON_UNUS
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">164</span>: </pre>
 <pre class="cython line score-106" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">165</span>: <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">feedforward_all</span><span class="p">(</span></pre>
-<pre class='cython code score-106 '>static PyObject *__pyx_pw_14Neural_Network_3SNN_5feedforward_all(PyObject *__pyx_self, 
+<pre class='cython code score-106 '>static PyObject *__pyx_pw_3SNN_5feedforward_all(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_14Neural_Network_3SNN_feedforward_all(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_3SNN_feedforward_all(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyObject *__pyx_r = NULL;
@@ -2171,7 +2171,7 @@ static PyObject *__pyx_f_14Neural_Network_3SNN_feedforward_all(PyArrayObject *__
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2184,15 +2184,15 @@ static PyObject *__pyx_f_14Neural_Network_3SNN_feedforward_all(PyArrayObject *__
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14Neural_Network_3SNN_5feedforward_all(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_3SNN_5feedforward_all(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_14Neural_Network_3SNN_5feedforward_all = {"feedforward_all", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14Neural_Network_3SNN_5feedforward_all, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14Neural_Network_3SNN_5feedforward_all(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_3SNN_5feedforward_all = {"feedforward_all", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3SNN_5feedforward_all, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3SNN_5feedforward_all(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2289,14 +2289,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_x_dp), __pyx_ptype_5numpy_ndarray, 1, "x_dp", 0))) <span class='error_goto'>__PYX_ERR(0, 166, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_layers), (&amp;PyList_Type), 1, "layers", 1))) <span class='error_goto'>__PYX_ERR(0, 167, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_biases), (&amp;PyList_Type), 1, "biases", 1))) <span class='error_goto'>__PYX_ERR(0, 168, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_14Neural_Network_3SNN_4feedforward_all(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
+  __pyx_r = __pyx_pf_3SNN_4feedforward_all(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -2316,7 +2316,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+static PyObject *__pyx_pf_3SNN_4feedforward_all(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyObject *__pyx_r = NULL;
@@ -2333,7 +2333,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
   }
   __pyx_pybuffernd_x_dp.diminfo[0].strides = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.strides[0]; __pyx_pybuffernd_x_dp.diminfo[0].shape = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.shape[0];
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_f_14Neural_Network_3SNN_feedforward_all(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_3SNN_feedforward_all(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2348,7 +2348,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_all", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2360,7 +2360,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
   return __pyx_r;
 }
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_14Neural_Network_3SNN_5feedforward_all, 0, __pyx_n_s_feedforward_all, NULL, __pyx_n_s_Neural_Network_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__5));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_3SNN_5feedforward_all, 0, __pyx_n_s_feedforward_all, NULL, __pyx_n_s_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__5));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_feedforward_all, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 165, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
@@ -2373,7 +2373,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
 <pre class="cython line score-0">&#xA0;<span class="">170</span>: <span class="p">):</span></pre>
 <pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">171</span>:     <span class="k">return</span> <span class="n">_ff_all</span><span class="p">(</span><span class="n">x_dp</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">biases</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_f_14Neural_Network_3SNN__ff_all(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_3SNN__ff_all(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
@@ -2381,7 +2381,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
 </pre><pre class="cython line score-0">&#xA0;<span class="">172</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">173</span>: </pre>
 <pre class="cython line score-32" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">174</span>: <span class="k">cdef</span> <span class="kt">list</span> <span class="nf">_ff_all_clipped</span><span class="p">(</span></pre>
-<pre class='cython code score-32 '>static PyObject *__pyx_f_14Neural_Network_3SNN__ff_all_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+<pre class='cython code score-32 '>static PyObject *__pyx_f_3SNN__ff_all_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   int __pyx_v_L;
   int __pyx_v_i;
   int __pyx_v_j;
@@ -2438,7 +2438,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_vector.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._ff_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._ff_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2595,7 +2595,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
 <pre class='cython code score-50 '>      __pyx_t_2 = <span class='pyx_c_api'>__Pyx_GetItemInt</span>(((PyObject *)__pyx_v_layer), __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 0, 1, 1);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
       if (!(likely(((__pyx_t_2) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) <span class='error_goto'>__PYX_ERR(0, 193, __pyx_L1_error)</span>
-      __pyx_t_15 = __pyx_f_14Neural_Network_3SNN_dot(((PyArrayObject *)__pyx_t_2), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 193, __pyx_L1_error)</span>
+      __pyx_t_15 = __pyx_f_3SNN_dot(((PyArrayObject *)__pyx_t_2), ((PyArrayObject *)__pyx_v_current_vector)); if (unlikely(__pyx_t_15 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 193, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)</span>
       <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
@@ -2614,7 +2614,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_15 = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(__pyx_t_5); if (unlikely((__pyx_t_15 == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 193, __pyx_L1_error)</span>
       <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_16 = __pyx_f_14Neural_Network_3SNN_clipped_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 193, __pyx_L1_error)</span>
+      __pyx_t_16 = __pyx_f_3SNN_clipped_sigmoid(__pyx_t_15); if (unlikely(__pyx_t_16 == ((double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 193, __pyx_L1_error)</span>
       __pyx_t_17 = __pyx_v_j;
       __pyx_t_18 = -1;
       if (__pyx_t_17 &lt; 0) {
@@ -2659,14 +2659,14 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_4feedforward_all(CYTHON_UNUSED P
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">198</span>: </pre>
 <pre class="cython line score-106" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">199</span>: <span class="k">cpdef</span> <span class="kt">list</span> <span class="nf">feedforward_all_clipped</span><span class="p">(</span></pre>
-<pre class='cython code score-106 '>static PyObject *__pyx_pw_14Neural_Network_3SNN_7feedforward_all_clipped(PyObject *__pyx_self, 
+<pre class='cython code score-106 '>static PyObject *__pyx_pw_3SNN_7feedforward_all_clipped(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_14Neural_Network_3SNN_feedforward_all_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_3SNN_feedforward_all_clipped(PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases, CYTHON_UNUSED int __pyx_skip_dispatch) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyObject *__pyx_r = NULL;
@@ -2692,7 +2692,7 @@ static PyObject *__pyx_f_14Neural_Network_3SNN_feedforward_all_clipped(PyArrayOb
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2705,15 +2705,15 @@ static PyObject *__pyx_f_14Neural_Network_3SNN_feedforward_all_clipped(PyArrayOb
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14Neural_Network_3SNN_7feedforward_all_clipped(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_3SNN_7feedforward_all_clipped(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_14Neural_Network_3SNN_7feedforward_all_clipped = {"feedforward_all_clipped", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14Neural_Network_3SNN_7feedforward_all_clipped, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14Neural_Network_3SNN_7feedforward_all_clipped(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_3SNN_7feedforward_all_clipped = {"feedforward_all_clipped", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3SNN_7feedforward_all_clipped, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3SNN_7feedforward_all_clipped(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2810,14 +2810,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_x_dp), __pyx_ptype_5numpy_ndarray, 1, "x_dp", 0))) <span class='error_goto'>__PYX_ERR(0, 200, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_layers), (&amp;PyList_Type), 1, "layers", 1))) <span class='error_goto'>__PYX_ERR(0, 201, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_biases), (&amp;PyList_Type), 1, "biases", 1))) <span class='error_goto'>__PYX_ERR(0, 202, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
+  __pyx_r = __pyx_pf_3SNN_6feedforward_all_clipped(__pyx_self, __pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -2837,7 +2837,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
+static PyObject *__pyx_pf_3SNN_6feedforward_all_clipped(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_x_dp, PyObject *__pyx_v_layers, PyObject *__pyx_v_biases) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_x_dp;
   __Pyx_Buffer __pyx_pybuffer_x_dp;
   PyObject *__pyx_r = NULL;
@@ -2854,7 +2854,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(CYTHON_
   }
   __pyx_pybuffernd_x_dp.diminfo[0].strides = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.strides[0]; __pyx_pybuffernd_x_dp.diminfo[0].shape = __pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer.shape[0];
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_f_14Neural_Network_3SNN_feedforward_all_clipped(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_3SNN_feedforward_all_clipped(__pyx_v_x_dp, __pyx_v_layers, __pyx_v_biases, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2869,7 +2869,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(CYTHON_
     <span class='pyx_c_api'>__Pyx_ErrFetch</span>(&amp;__pyx_type, &amp;__pyx_value, &amp;__pyx_tb);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_x_dp.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN.feedforward_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN.feedforward_all_clipped", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -2881,7 +2881,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(CYTHON_
   return __pyx_r;
 }
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_14Neural_Network_3SNN_7feedforward_all_clipped, 0, __pyx_n_s_feedforward_all_clipped, NULL, __pyx_n_s_Neural_Network_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__6));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_3SNN_7feedforward_all_clipped, 0, __pyx_n_s_feedforward_all_clipped, NULL, __pyx_n_s_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__6));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_feedforward_all_clipped, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 199, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
@@ -2894,7 +2894,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(CYTHON_
 <pre class="cython line score-0">&#xA0;<span class="">204</span>: <span class="p">):</span></pre>
 <pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">205</span>:     <span class="k">return</span> <span class="n">_ff_all_clipped</span><span class="p">(</span><span class="n">x_dp</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">biases</span><span class="p">)</span></pre>
 <pre class='cython code score-1 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_f_14Neural_Network_3SNN__ff_all_clipped(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_3SNN__ff_all_clipped(((PyArrayObject *)__pyx_v_x_dp), __pyx_v_layers, __pyx_v_biases);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 205, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
@@ -2954,14 +2954,14 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_6feedforward_all_clipped(CYTHON_
 <pre class="cython line score-0">&#xA0;<span class="">258</span>: <span class="sd">&#39;&#39;&#39;</span></pre>
 <pre class="cython line score-0">&#xA0;<span class="">259</span>: </pre>
 <pre class="cython line score-142" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">260</span>: <span class="k">cpdef</span> <span class="nf">_get_derivative</span><span class="p">(</span></pre>
-<pre class='cython code score-142 '>static PyObject *__pyx_pw_14Neural_Network_3SNN_9_get_derivative(PyObject *__pyx_self, 
+<pre class='cython code score-142 '>static PyObject *__pyx_pw_3SNN_9_get_derivative(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_14Neural_Network_3SNN__get_derivative(PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_v, PyArrayObject *__pyx_v_y, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_3SNN__get_derivative(PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_v, PyArrayObject *__pyx_v_y, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyArrayObject *__pyx_v_temp = 0;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_temp;
   __Pyx_Buffer __pyx_pybuffer_temp;
@@ -3021,7 +3021,7 @@ static PyObject *__pyx_f_14Neural_Network_3SNN__get_derivative(PyArrayObject *__
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_w.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_y.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._get_derivative", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._get_derivative", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3038,15 +3038,15 @@ static PyObject *__pyx_f_14Neural_Network_3SNN__get_derivative(PyArrayObject *__
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14Neural_Network_3SNN_9_get_derivative(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_3SNN_9_get_derivative(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_14Neural_Network_3SNN_9_get_derivative = {"_get_derivative", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14Neural_Network_3SNN_9_get_derivative, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14Neural_Network_3SNN_9_get_derivative(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_3SNN_9_get_derivative = {"_get_derivative", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3SNN_9_get_derivative, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3SNN_9_get_derivative(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3143,14 +3143,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._get_derivative", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._get_derivative", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_w), __pyx_ptype_5numpy_ndarray, 1, "w", 0))) <span class='error_goto'>__PYX_ERR(0, 261, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_v), __pyx_ptype_5numpy_ndarray, 1, "v", 0))) <span class='error_goto'>__PYX_ERR(0, 262, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_y), __pyx_ptype_5numpy_ndarray, 1, "y", 0))) <span class='error_goto'>__PYX_ERR(0, 263, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_14Neural_Network_3SNN_8_get_derivative(__pyx_self, __pyx_v_w, __pyx_v_v, __pyx_v_y);
+  __pyx_r = __pyx_pf_3SNN_8_get_derivative(__pyx_self, __pyx_v_w, __pyx_v_v, __pyx_v_y);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3170,7 +3170,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14Neural_Network_3SNN_8_get_derivative(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_v, PyArrayObject *__pyx_v_y) {
+static PyObject *__pyx_pf_3SNN_8_get_derivative(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_w, PyArrayObject *__pyx_v_v, PyArrayObject *__pyx_v_y) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_v;
   __Pyx_Buffer __pyx_pybuffer_v;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_w;
@@ -3209,7 +3209,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_8_get_derivative(CYTHON_UNUSED P
   }
   __pyx_pybuffernd_y.diminfo[0].strides = __pyx_pybuffernd_y.rcbuffer-&gt;pybuffer.strides[0]; __pyx_pybuffernd_y.diminfo[0].shape = __pyx_pybuffernd_y.rcbuffer-&gt;pybuffer.shape[0];
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_f_14Neural_Network_3SNN__get_derivative(__pyx_v_w, __pyx_v_v, __pyx_v_y, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 260, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_3SNN__get_derivative(__pyx_v_w, __pyx_v_v, __pyx_v_y, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 260, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3226,7 +3226,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_8_get_derivative(CYTHON_UNUSED P
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_w.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_y.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._get_derivative", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._get_derivative", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3244,7 +3244,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_8_get_derivative(CYTHON_UNUSED P
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple__11);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple__11);
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_14Neural_Network_3SNN_9_get_derivative, 0, __pyx_n_s_get_derivative, NULL, __pyx_n_s_Neural_Network_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__7));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_3SNN_9_get_derivative, 0, __pyx_n_s_get_derivative, NULL, __pyx_n_s_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__7));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 260, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_get_derivative, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 260, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
@@ -3315,14 +3315,14 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_8_get_derivative(CYTHON_UNUSED P
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">267</span>: </pre>
 <pre class="cython line score-162" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">268</span>: <span class="k">cpdef</span> <span class="nf">_bp_single</span><span class="p">(</span></pre>
-<pre class='cython code score-162 '>static PyObject *__pyx_pw_14Neural_Network_3SNN_11_bp_single(PyObject *__pyx_self, 
+<pre class='cython code score-162 '>static PyObject *__pyx_pw_3SNN_11_bp_single(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_14Neural_Network_3SNN__bp_single(PyObject *__pyx_v_weights, PyObject *__pyx_v_activations, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_xdp, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_3SNN__bp_single(PyObject *__pyx_v_weights, PyObject *__pyx_v_activations, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_xdp, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyArrayObject *__pyx_v_layer_error = 0;
   PyObject *__pyx_v_deltas = 0;
   PyObject *__pyx_v_biases = 0;
@@ -3397,7 +3397,7 @@ static PyObject *__pyx_f_14Neural_Network_3SNN__bp_single(PyObject *__pyx_v_weig
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_xdp.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_y.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._bp_single", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._bp_single", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3421,15 +3421,15 @@ static PyObject *__pyx_f_14Neural_Network_3SNN__bp_single(PyObject *__pyx_v_weig
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14Neural_Network_3SNN_11_bp_single(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_3SNN_11_bp_single(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_14Neural_Network_3SNN_11_bp_single = {"_bp_single", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_14Neural_Network_3SNN_11_bp_single, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14Neural_Network_3SNN_11_bp_single(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_3SNN_11_bp_single = {"_bp_single", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_3SNN_11_bp_single, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_3SNN_11_bp_single(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3541,7 +3541,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       <span class='pyx_c_api'>__Pyx_Arg_XDECREF_FASTCALL</span>(values[__pyx_temp]);
     }
   }
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._bp_single", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._bp_single", __pyx_clineno, __pyx_lineno, __pyx_filename);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
@@ -3549,7 +3549,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_activations), (&amp;PyList_Type), 1, "activations", 1))) <span class='error_goto'>__PYX_ERR(0, 270, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_y), __pyx_ptype_5numpy_ndarray, 1, "y", 0))) <span class='error_goto'>__PYX_ERR(0, 271, __pyx_L1_error)</span>
   if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_xdp), __pyx_ptype_5numpy_ndarray, 1, "xdp", 0))) <span class='error_goto'>__PYX_ERR(0, 272, __pyx_L1_error)</span>
-  __pyx_r = __pyx_pf_14Neural_Network_3SNN_10_bp_single(__pyx_self, __pyx_v_weights, __pyx_v_activations, __pyx_v_y, __pyx_v_xdp);
+  __pyx_r = __pyx_pf_3SNN_10_bp_single(__pyx_self, __pyx_v_weights, __pyx_v_activations, __pyx_v_y, __pyx_v_xdp);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3569,7 +3569,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14Neural_Network_3SNN_10_bp_single(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_weights, PyObject *__pyx_v_activations, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_xdp) {
+static PyObject *__pyx_pf_3SNN_10_bp_single(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_weights, PyObject *__pyx_v_activations, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_xdp) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_xdp;
   __Pyx_Buffer __pyx_pybuffer_xdp;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_y;
@@ -3597,7 +3597,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_10_bp_single(CYTHON_UNUSED PyObj
   }
   __pyx_pybuffernd_xdp.diminfo[0].strides = __pyx_pybuffernd_xdp.rcbuffer-&gt;pybuffer.strides[0]; __pyx_pybuffernd_xdp.diminfo[0].shape = __pyx_pybuffernd_xdp.rcbuffer-&gt;pybuffer.shape[0];
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_1 = __pyx_f_14Neural_Network_3SNN__bp_single(__pyx_v_weights, __pyx_v_activations, __pyx_v_y, __pyx_v_xdp, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)</span>
+  __pyx_t_1 = __pyx_f_3SNN__bp_single(__pyx_v_weights, __pyx_v_activations, __pyx_v_y, __pyx_v_xdp, 0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3613,7 +3613,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_10_bp_single(CYTHON_UNUSED PyObj
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_xdp.rcbuffer-&gt;pybuffer);
     <span class='pyx_c_api'>__Pyx_SafeReleaseBuffer</span>(&amp;__pyx_pybuffernd_y.rcbuffer-&gt;pybuffer);
   <span class='pyx_c_api'>__Pyx_ErrRestore</span>(__pyx_type, __pyx_value, __pyx_tb);}
-  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("Neural_Network.SNN._bp_single", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  <span class='pyx_c_api'>__Pyx_AddTraceback</span>("SNN._bp_single", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3630,7 +3630,7 @@ static PyObject *__pyx_pf_14Neural_Network_3SNN_10_bp_single(CYTHON_UNUSED PyObj
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple__12);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple__12);
 /* … */
-  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_14Neural_Network_3SNN_11_bp_single, 0, __pyx_n_s_bp_single, NULL, __pyx_n_s_Neural_Network_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__8));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 268, __pyx_L1_error)</span>
+  __pyx_t_2 = <span class='pyx_c_api'>__Pyx_CyFunction_New</span>(&amp;__pyx_mdef_3SNN_11_bp_single, 0, __pyx_n_s_bp_single, NULL, __pyx_n_s_SNN, __pyx_d, ((PyObject *)__pyx_codeobj__8));<span class='error_goto'> if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 268, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_2);
   if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_bp_single, __pyx_t_2) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 268, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_2); __pyx_t_2 = 0;
