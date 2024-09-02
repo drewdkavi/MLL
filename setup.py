@@ -6,7 +6,7 @@ def run_setup(directory):
     setup_script = os.path.join(directory, 'setup.py')
     print(setup_script)
 
-    # Check if setup_main.py exists in the directory
+    # Check if setup.py exists in the directory
     if os.path.exists(setup_script):
         print(f"Running setup.py in {directory}...")
         try:
@@ -33,7 +33,7 @@ def run_setup(directory):
 
 
 def main():
-    # Directories containing setup_main.py files
+    # Directories containing setup.py files
     directories = [
         'package//Models//Neural_Network',
         'package//Models//Classifier//DecisionTreesC45',
@@ -41,7 +41,7 @@ def main():
         'package//Models//Classifier//Random_Forest',
     ]
 
-    # Iterate through each directory and run setup_main.py
+    # Iterate through each directory and run setup.py
     for directory in directories:
         run_setup(directory)
 

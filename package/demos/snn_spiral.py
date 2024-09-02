@@ -8,6 +8,7 @@ from package.data import get_twin_spiral_data
 
 
 def demo():
+    print("SNN classifying twin spirals")
 
     # DATA:
 

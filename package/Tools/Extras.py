@@ -14,7 +14,7 @@ def map_extra_2d_features(xs):
     return np.apply_along_axis(mapping, 1, xs)
 
 
-def plot_2d_predictions(model, x_train, y_train, x1_min, x1_max, x2_min, x2_max, extras: bool = False, mesh_points: int = 200) -> None:
+def plot_2d_predictions(model, x_train, y_train, x1_min, x1_max, x2_min, x2_max, extras: bool = False, add_extra_dim: bool = False, mesh_points: int = 200) -> None:
 
     # TODO: Add the rest of these
     to_colour = {0: 'red', 1: 'green', 2: 'blue', 3: 'purple'}
@@ -34,22 +34,7 @@ def plot_2d_predictions(model, x_train, y_train, x1_min, x1_max, x2_min, x2_max,
     mesh_x1s, mesh_x2s = [], []
     mesh_colours = []
 
-    if not extras:
-        for i in range(MESH_SIZE):
-            for j in range(MESH_SIZE):
-                x = x1_min + i * delta_x
-                y = x2_min + j * delta_y
-                point = np.array([x, y])
-                xs[k] = point
-                mesh_x1s.append(x)
-                mesh_x2s.append(y)
-                mesh_colours.append(to_light_colour[model.predict(np.array([x, y]))])
-
-                def onclick(event):
-                    x, y = event.xdata, event.ydata
-                    if x is not None and y is not None:  # Check if the click was inside the axes
-                        print(f"{x}, {y} -> {to_colour[model.predict(np.array([x, y]))]}")
-    else:
+    if extras:
         for i in range(MESH_SIZE):
             for j in range(MESH_SIZE):
                 x = x1_min + i * delta_x
@@ -67,6 +52,36 @@ def plot_2d_predictions(model, x_train, y_train, x1_min, x1_max, x2_min, x2_max,
                     x, y = event.xdata, event.ydata
                     if x is not None and y is not None:  # Check if the click was inside the axes
                         print(f"{x}, {y} -> {to_colour[model.predict(np.array([x, y, x**2, y**2, np.sin(x), np.sin(y)]))]}")
+    elif add_extra_dim:
+        for i in range(MESH_SIZE):
+            for j in range(MESH_SIZE):
+                x = x1_min + i * delta_x
+                y = x2_min + j * delta_y
+                mesh_x1s.append(x)
+                mesh_x2s.append(y)
+                mesh_colours.append(to_light_colour[model.predict(np.array([x, y, 1]))])
+                xs[k] = np.array([x, y, 1])
+
+                def onclick(event):
+                    x, y = event.xdata, event.ydata
+                    if x is not None and y is not None:  # Check if the click was inside the axes
+                        print(f"{x}, {y} -> {to_colour[model.predict(np.array([x, y, 1]))]}")
+
+    else:
+        for i in range(MESH_SIZE):
+            for j in range(MESH_SIZE):
+                x = x1_min + i * delta_x
+                y = x2_min + j * delta_y
+                point = np.array([x, y])
+                xs[k] = point
+                mesh_x1s.append(x)
+                mesh_x2s.append(y)
+                mesh_colours.append(to_light_colour[model.predict(np.array([x, y]))])
+
+                def onclick(event):
+                    x, y = event.xdata, event.ydata
+                    if x is not None and y is not None:  # Check if the click was inside the axes
+                        print(f"{x}, {y} -> {to_colour[model.predict(np.array([x, y]))]}")
 
     fig, ax = plt.subplots()
     ax.scatter(mesh_x1s, mesh_x2s, c=mesh_colours, s=0.25)

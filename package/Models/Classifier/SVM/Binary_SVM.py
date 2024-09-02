@@ -53,7 +53,6 @@ class BinarySVMLinearSeparable(Classifier):
         hit_count = 0
         for x_i, y_i in zip(x_test, y_true):
             pred = self.predict(x_i)
-            print(f"(x_i y_i): = {x_i[:-1], y_i}, pred(x_i) = {pred}")
             if pred == y_i:
                 hit_count += 1
         return hit_count / len(y_true)
@@ -127,7 +126,6 @@ class BinarySVMLinear(Classifier):
         hit_count = 0
         for x_i, y_i in zip(x_test, y_true):
             pred = self.predict(x_i)
-            print(f"(SUM[x_i]/2 y_i): = {sum(x_i[:-1]), y_i}, pred(x_i) = {pred}")
             if pred == y_i:
                 hit_count += 1
         return hit_count / len(y_true)
@@ -148,16 +146,15 @@ class SVMLinearOVR(Classifier):
         # pass it to weight i
         # we are done!
         for i in range(self._num_classes):
-            print(f"i = {i}: ", end="")
+            print(f"Training class {i} for O vs. R: ", end="\r")
             self._weights[i] = self._trainOVR(x_train, y_train, i)
-            print(f"self._weights[i] = {self._weights[i]}")
+        print("                                                      ")
         return self._weights
 
     def _trainOVR(self, x_train, y_train, i: int):
         _X_TRAIN = x_train
         _Y_TRAIN_OVR_ENCODED = [1 if y == i else -1 for y in y_train]
 
-        print('Training... ')
         N = len(_X_TRAIN)
         z = [0] * N
         wz = self._weights[i] + z
@@ -225,9 +222,8 @@ class SVMLinearOVRSeparable(Classifier):
         # pass it to weight i
         # we are done!
         for i in range(self._num_classes):
-            print(f"i = {i}: ", end="")
+            print(f"Training O vs. R for class {i}: ", end="\r")
             self._weights[i] = self._trainOVO(x_train, y_train, i)
-            print(f"self._weights[i] = {self._weights[i]}")
         return self._weights
 
     def _trainOVR(self, x_train, y_train, i: int):
@@ -290,22 +286,17 @@ class SVMLinearOVO(Classifier):
         # then compute the OVR weighting for it
         # pass it to weight i
         # we are done!
-        profiler = cProfile.Profile()
-        profiler.enable()
         for i in range(self._num_classes):
             for j in range(self._num_classes):
                 if i != j:
                     # print(f"i, j = {i, j}: ", end="\n")
                     self._weights[i][j] = self._trainOVO(x_train, y_train, i, j)
                     # print(f"self._weights[i] = {self._weights[i]}")
-        profiler.disable()
-        stats = pstats.Stats(profiler).sort_stats('cumtime')
-        stats.print_stats()
         return self._weights
 
     def _trainOVO(self, x_train, y_train, i: int, j: int):
         """i vs j"""
-        print(f"Training {i} vs. {j}")
+        print(f"Training {i} vs. {j}", end='\r')
         _X_TRAIN = x_train
         _Y_TRAIN_OVR_ENCODED = [1 if y == i else (-1 if y == j else 0) for y in y_train]
         # print(f"_Y_TRAIN: {_Y_TRAIN_OVR_ENCODED}")
@@ -350,9 +341,6 @@ class SVMLinearOVO(Classifier):
         return w
 
     def predict(self, x_dp: npt.NDArray[float]) -> int | float:
-
-        # print(f"weights(i, j) = {self._weights[i][j]}")
-        # print(f"weights(j, i) = {self._weights[j][i]}")
         max_i = 0
         max_v = 0
         for i in range(self._num_classes):
@@ -369,7 +357,6 @@ class SVMLinearOVO(Classifier):
         hit_count = 0
         for x_i, y_i in zip(x_test, y_true):
             pred = self.predict(x_i)
-            print(f"y_true = {y_i}, y_pred = {pred}")
             if pred == y_i:
                 hit_count += 1
         return hit_count / len(y_true)

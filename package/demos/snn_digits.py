@@ -5,7 +5,7 @@ from sklearn.datasets import load_digits
 
 
 def demo():
-    print("SNN on the Iris Data Set")
+    print("SNN on the handwritten digit classification Data Set")
 
     #  Fetch scikit-learns data
 

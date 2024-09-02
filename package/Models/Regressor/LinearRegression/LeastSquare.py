@@ -38,7 +38,6 @@ class LinearLeastSquareRegressionModel(Regressor):
         y_train = np.array(y_t)
 
         self._weights = least_squares_minimiser(x_train, y_train)
-        print(self._weights)
 
     def predict(self, x_dp: List[float]):
         return np.dot(np.array(x_dp), self._weights)

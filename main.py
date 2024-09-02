@@ -4,6 +4,8 @@ from os import system, name
 from package.demos import (snn_2class_blobs, snn_4class_blobs_trial,
                            snn_breastCancer, snn_spiral, snn_irises, snn_digits)
 from package.demos import decisionTree_demo, randomForest_demo, rf_irises
+from package.demos import logreg_demo, llsr_demo
+from package.demos  import bsvm_OVR_demo, bsvm_OVO_demo
 
 
 def clear():
@@ -11,6 +13,18 @@ def clear():
         _ = system('cls')
     else:
         _ = system('clear')
+
+
+def test():
+
+    """Some other demos to check out"""
+
+    # logreg_demo.demo()
+    # llsr_demo.demo()
+    # bsvm_OVR_demo.demo()
+    # bsvm_OVO_demo.demo()
+    pass
+
 
 
 def main():
@@ -50,13 +64,14 @@ def main():
     input("Press enter to continue...")
     clear()
 
-    # This is quite accurate despite not being a CNN :)
-    # snn_digits.demo()
-    # input("Press enter to continue...")
-    # clear()
+    # This is quite accurate despite not being a CNN - takes a while though :)
+    snn_digits.demo()
+    input("Press enter to continue...")
+    clear()
 
     snn_spiral.demo()
 
 
 if __name__ == '__main__':
     main()
+    # test()

@@ -48,46 +48,91 @@ def get_2blobs_diagonal(N: int, blob_radius=0.23):
     return xs, ys
 
 
-def get_4blobs(N: int = 1000, blob_radius: float = 0.25):
+def get_4blobs(N: int = 1000, blob_radius: float = 0.25, add_extra_dim: bool = False):
+        if not add_extra_dim:
+            xs = np.zeros((N, 2), dtype=float)
+            ys = np.zeros(N, dtype=str)
 
-        xs = np.zeros((N, 2), dtype=float)
-        ys = np.zeros(N, dtype=str)
+            for i in range(N):
 
-        for i in range(N):
+                y = random.choice([0, 1, 2, 3])
+                y = random.choice([0, 1, 2, 3])
+                if y == 0:
+                    ys[i] = 'Strawberries'
+                    x1_init = 0.3
+                    x2_init = 0.75
 
-            y = random.choice([0, 1, 2, 3])
-            y = random.choice([0, 1, 2, 3])
-            if y == 0:
-                ys[i] = 'Strawberries'
-                x1_init = 0.3
-                x2_init = 0.75
+                elif y == 1:
+                    ys[i] = 'Apples'
+                    x1_init = 0.25
+                    x2_init = 0.3
 
-            elif y == 1:
-                ys[i] = 'Apples'
-                x1_init = 0.25
-                x2_init = 0.3
+                elif y == 2:
+                    ys[i] = 'Blueberries'
+                    x1_init = 0.7
+                    x2_init = 0.25
 
-            elif y == 2:
-                ys[i] = 'Blueberries'
-                x1_init = 0.7
-                x2_init = 0.25
+                elif y == 3:
+                    ys[i] = 'Grapes'
+                    x1_init = 0.75
+                    x2_init = 0.7
+                else:
+                    x1_init = -1
+                    x2_init = -1
 
-            elif y == 3:
-                ys[i] = 'Grapes'
-                x1_init = 0.75
-                x2_init = 0.7
-            else:
-                x1_init = -1
-                x2_init = -1
+                r = blob_radius * math.sqrt(random.uniform(0, 1))
+                theta = random.uniform(0, 1) * 2 * np.pi
+                x1 = x1_init + r * math.cos(theta)
+                x2 = x2_init + r * math.sin(theta)
 
-            r = blob_radius * math.sqrt(random.uniform(0, 1))
-            theta = random.uniform(0, 1) * 2 * np.pi
-            x1 = x1_init + r * math.cos(theta)
-            x2 = x2_init + r * math.sin(theta)
+                xs[i][0] = x1
+                xs[i][1] = x2
 
-            xs[i][0] = x1
-            xs[i][1] = x2
-        return xs, ys
+            return xs, ys
+
+        else:
+
+            xs = np.zeros((N, 3), dtype=float)
+            ys = np.zeros(N, dtype=str)
+
+            for i in range(N):
+
+                y = random.choice([0, 1, 2, 3])
+                y = random.choice([0, 1, 2, 3])
+                if y == 0:
+                    ys[i] = 'Strawberries'
+                    x1_init = 0.3
+                    x2_init = 0.75
+
+                elif y == 1:
+                    ys[i] = 'Apples'
+                    x1_init = 0.25
+                    x2_init = 0.3
+
+                elif y == 2:
+                    ys[i] = 'Blueberries'
+                    x1_init = 0.7
+                    x2_init = 0.25
+
+                elif y == 3:
+                    ys[i] = 'Grapes'
+                    x1_init = 0.75
+                    x2_init = 0.7
+                else:
+                    x1_init = -1
+                    x2_init = -1
+
+                r = blob_radius * math.sqrt(random.uniform(0, 1))
+                theta = random.uniform(0, 1) * 2 * np.pi
+                x1 = x1_init + r * math.cos(theta)
+                x2 = x2_init + r * math.sin(theta)
+
+                xs[i][0] = x1
+                xs[i][1] = x2
+                xs[i][2] = 1
+
+            return xs, ys
+
 
 
 def get_twin_spiral_data(N: int, a: float = 0.1, b: float = 0.27): # returns Xs, ys <- where ys is an [int]
