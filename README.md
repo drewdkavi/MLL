@@ -45,32 +45,36 @@ Use the library - *to see some demonstrations of the library in action run:*
 
 ### Example Usage:
 
-	from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
-	from package.Tools import LabelEncoder, split_test_train, map_categorical
-	from package.data import load_data
-	
-	# DATA:
-	Xs, ys = load_data()
-	
-	# Clean/Pre-process
-	le = LabelEncoder()
-	le.build(ys)
-	ys_enc = le.fit_transform(ys)
-	x_train, x_test, y_train, y_test = split_test_train(Xs, ys_enc, 0.25)
-	ys_train_ohe = map_categorical(y_train, NUM_CATEGORIES)  # Maps i -> [0, ..., 1, ..0] in the i-th position
-	
-	# Initialise and train model:
-	snn = SequentialNeuralNetworkClassifier(
-		INPUT_DIM,
-		NUM_CATEGORIES,
-		INTERNAL_LAYERS = [16, 16], 
-		EPOCHS = 200,
-		learning_rate = 0.01
-	)
-	snn.train(x_train, ys_train_ohe)
-	
-	# Get test results:
-	result = snn.test(x_test, y_test)
-	print(f"F1-macro - {result.f1.average_score()}")
+```python
+
+from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
+from package.Tools import LabelEncoder, split_test_train, map_categorical
+from package.data import load_data
+
+# DATA:
+xs, ys = load_data()
+
+# Clean/Pre-process
+le = LabelEncoder()
+le.build(ys)
+ys_enc = le.fit_transform(ys)
+x_train, x_test, y_train, y_test = split_test_train(xs, ys_enc, 0.25)
+ys_train_ohe = map_categorical(y_train, <NUM_CATEGORIES>)  # Maps i -> [0, ..., 1, ..0] in the i-th position
+
+# Initialise and train model:
+snn = SequentialNeuralNetworkClassifier(
+	<INPUT_DIM>,
+	<NUM_CATEGORIES>,
+	INTERNAL_LAYERS = [16, 16], 
+	EPOCHS = 200,
+	learning_rate = 0.01
+)
+snn.train(x_train, ys_train_ohe)
+
+# Get test results:
+result = snn.test(x_test, y_test)
+print(f"F1-macro - {result.f1.average_score()}")
+
+```
 	
     
