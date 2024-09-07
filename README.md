@@ -31,7 +31,7 @@ Clone the repo:
 	git clone https://github.com/DdkCode/MLL
 
 Navigate to the repo and install the prerequistes:  
-*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for comparisons and visualisation* 
+*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for comparisons between this library and sklearn's implemenatations and data-visualisation* 
 
 	pip install -r requirements.txt
     
