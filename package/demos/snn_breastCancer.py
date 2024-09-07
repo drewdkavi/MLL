@@ -11,7 +11,7 @@ from sklearn.datasets import load_iris, load_breast_cancer
 
 
 def demo():
-    print("Breast Cancer Data Set")
+    print("Sequential Neural Network on the Breast Cancer Data Set")
 
 
     #  Fetch scikit-learns data
