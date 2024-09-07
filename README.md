@@ -55,8 +55,7 @@ from package.data import load_data
 xs, ys = load_data()
 
 # Clean/Pre-process
-le = LabelEncoder()
-le.build(ys)
+le = LabelEncoder().build(ys)
 ys_enc = le.fit_transform(ys)
 x_train, x_test, y_train, y_test = split_test_train(xs, ys_enc, 0.25)
 ys_train_ohe = map_categorical(y_train, <NUM_CATEGORIES>)  # Maps i -> [0, ..., 1, ..0] in the i-th position
@@ -95,7 +94,7 @@ print(f"F1-macro - {result.f1.average_score()}")
 │   │   │   ├── LogisticClassification
 │   │   │   │   └── LogisticReg.py
 │   │   │   ├── Random_Forest
-│   │   │   │   ├── RotationForest.py
+│   │   │   │   ├── RandomForest.py
 │   │   │   │   ├── generateRuleRF.pyx
 │   │   │   │   └── setup.py
 │   │   │   ├── ResultObjects.py
