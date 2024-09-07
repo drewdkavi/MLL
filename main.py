@@ -48,6 +48,10 @@ def main():
     input("Press enter to continue...")
     clear()
 
+    bsvm_OVR_demo.demo()
+    input("Press enter to continue...")
+    clear()
+    
     snn_breastCancer.demo()
     input("Press enter to continue...")
     clear()
@@ -73,5 +77,5 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    test()
+    main()
+    # test()
