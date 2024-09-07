@@ -36,7 +36,7 @@ def main():
     # Directories containing setup.py files
     directories = [
         'package//Models//Neural_Network',
-        'package//Models//Classifier//DecisionTreesC45',
+        'package//Models//Classifier//Rotation_Forest',
         'package//Models//Classifier//DecisionTrees',
         'package//Models//Classifier//Random_Forest',
     ]

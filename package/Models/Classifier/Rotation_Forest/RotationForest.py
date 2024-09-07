@@ -105,7 +105,7 @@ def boostrapChoice(size: int) -> npt.NDArray[int]:
     return np.random.choice(np.arange(size), size=size)
 
 
-class RandomForest(Classifier):
+class RotationForest(Classifier):
     """
     Decision Tree Classifier
     ________________________
@@ -213,6 +213,4 @@ class RandomForest(Classifier):
         # stats.print_stats()
 
         return np.argmax(preds)
-
-    # Overridden method:
 

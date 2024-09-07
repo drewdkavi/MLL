@@ -14,7 +14,7 @@ class LabelEncoder:
         self.get_dec = None
         self.N: int = 0
 
-    def build(self, y_classes: npt.NDArray[T]) -> None:
+    def build(self, y_classes: npt.NDArray[T]):
         unique = np.unique(y_classes)
         enum_unique = enumerate(unique)
         encode: Dict[T, int] = {label: int_id for int_id, label in enum_unique}
@@ -33,6 +33,8 @@ class LabelEncoder:
         get_decoded = np.vectorize(_get_decoded)
         self.get_enc = get_encoded
         self.get_dec = get_decoded
+
+        return self
 
     def fit_transform(self, y_classes: npt.NDArray[T]) -> npt.NDArray[int]:
         return self.get_enc(y_classes)

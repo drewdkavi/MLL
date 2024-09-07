@@ -95,12 +95,12 @@ print(f"F1-macro - {result.f1.average_score()}")
 │   │   │   ├── LogisticClassification
 │   │   │   │   └── LogisticReg.py
 │   │   │   ├── Random_Forest
-│   │   │   │   ├── RandomForest.py
+│   │   │   │   ├── RotationForest.py
 │   │   │   │   ├── generateRuleRF.pyx
 │   │   │   │   └── setup.py
 │   │   │   ├── ResultObjects.py
 │   │   │   ├── Rotation_Forest
-│   │   │   │   ├── RandomForest.py
+│   │   │   │   ├── RotationForest.py
 │   │   │   │   ├── generateRuleRF.pyx
 │   │   │   │   └── setup.py
 │   │   │   └── SVM
