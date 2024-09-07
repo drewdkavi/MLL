@@ -52,18 +52,20 @@ from package.Tools import LabelEncoder, split_test_train, map_categorical
 from package.data import load_data
 
 # DATA:
-xs, ys = load_data()
+xs, ys = load_data()  # e.g. xs has shape (100, 18), and we want to classify the data into 5 different categories
+INDPUT_DIM = 18
+NUM_CATEGORIES = 5
 
 # Clean/Pre-process
 le = LabelEncoder().build(ys)
 ys_enc = le.fit_transform(ys)
 x_train, x_test, y_train, y_test = split_test_train(xs, ys_enc, 0.25)
-ys_train_ohe = map_categorical(y_train, <NUM_CATEGORIES>)  # Maps i -> [0, ..., 1, ..0] in the i-th position
+ys_train_ohe = map_categorical(y_train, NUM_CATEGORIES)  # Maps i -> [0, ..., 1, ..0] in the i-th index
 
 # Initialise and train model:
 snn = SequentialNeuralNetworkClassifier(
-	<INPUT_DIM>,
-	<NUM_CATEGORIES>,
+	INPUT_DIM,
+	NUM_CATEGORIES,
 	INTERNAL_LAYERS = [16, 16], 
 	EPOCHS = 200,
 	learning_rate = 0.01
