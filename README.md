@@ -8,7 +8,7 @@
 </p>
 
 This is a machine learning library, made from scratch to challenge myself. No tutorials or previous
-code implementation of these Ml models were used.
+code implementation of these ML models were used.
   
 
 #### It implements:  
