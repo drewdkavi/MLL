@@ -31,7 +31,7 @@ Clone the repo:
 	git clone https://github.com/drewdkavi/MLL
 
 Navigate to the repo and install the prerequistes:  
-*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for comparisons between this library and sklearn's implemenatations and data-visualisation* 
+*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for data-visualisation, and comparisons between this library and sklearn's implemenatations* 
 
 	pip install -r requirements.txt
     
