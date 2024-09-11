@@ -9,39 +9,6 @@
 
 This is a machine learning library, made from scratch to challenge myself. No tutorials or previous
 code implementation of these ML models were used.
-  
-
-#### It implements:  
-* Decision Trees - CART (which are highly performant, near sklearns implemenation)  
-* Random Forests - using ensembles of these Decision Trees  
-* Rotation Forests - An atypical variant of Random Forests (which allow for non-orthogonal decision boundaries)
-* Sequential Neural Networks with different activations and erros
-(for classification and regression tasks)
-
-* Support Vector Machines (several variations)  
-* Logistic Regression  
-* Linear Regression
-* A suite of useful tools for data cleaning, preparation, and visualisation
-* Some toy data sets generators
-
-
-### Setup:  
-Clone the repo:  
-
-	git clone https://github.com/drewdkavi/MLL
-
-Navigate to the repo and install the prerequistes:  
-*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for data-visualisation, and comparisons between this library and sklearn's implemenatations* 
-
-	pip install -r requirements.txt
-    
-Build Cython files:
-  
-	python setup.py
-
-Use the library - *to see some demonstrations of the library in action run:*
-
-	python main.py
 
 ### Example Usage:
 
@@ -77,6 +44,39 @@ result = snn.test(x_test, y_test)
 print(f"F1-macro - {result.f1.average_score()}")
 
 ```
+  
+
+#### It implements:  
+* Decision Trees - CART (which are highly performant, near sklearns implemenation)  
+* Random Forests - using ensembles of these Decision Trees  
+* Rotation Forests - An atypical variant of Random Forests (which allow for non-orthogonal decision boundaries)
+* Sequential Neural Networks with different activations and erros
+(for classification and regression tasks)
+
+* Support Vector Machines (several variations)  
+* Logistic Regression  
+* Linear Regression
+* A suite of useful tools for data cleaning, preparation, and visualisation
+* Some toy data sets generators
+
+
+### Setup:  
+Clone the repo:  
+
+	git clone https://github.com/drewdkavi/MLL
+
+Navigate to the repo and install the prerequistes:  
+*Note, only NumPy, Cython & SciPy are actually required - the rest are just needed for data-visualisation, and comparisons between this library and sklearn's implemenatations* 
+
+	pip install -r requirements.txt
+    
+Build Cython files:
+  
+	python setup.py
+
+Use the library - *to see some demonstrations of the library in action run:*
+
+	python main.py
 
 #### Structure:
 ```sh
