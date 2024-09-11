@@ -47,7 +47,7 @@ Use the library - *to see some demonstrations of the library in action run:*
 
 ```python
 
-from package.Models.Neural_Network import SequentialNeuralNetowrkClassifier
+from package.Models.Neural_Network import SequentialNeuralNetworkClassifier
 from package.Tools import LabelEncoder, split_test_train, map_categorical
 from package.data import load_data
 
