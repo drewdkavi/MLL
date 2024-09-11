@@ -46,7 +46,7 @@ print(f"F1-macro - {result.f1.average_score()}")
 ```
   
 
-#### It implements:  
+### It implements:  
 * Decision Trees - CART (which are highly performant, near sklearns implemenation)  
 * Random Forests - using ensembles of these Decision Trees  
 * Rotation Forests - An atypical variant of Random Forests (which allow for non-orthogonal decision boundaries)
