@@ -78,7 +78,7 @@ Use the library - *to see some demonstrations of the library in action run:*
 
 	python main.py
 
-#### Structure:
+### Structure:
 ```sh
 .
 ├── README.md
